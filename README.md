@@ -58,9 +58,11 @@ El sitio usa `fetch()` para cargar `data/noticias.json` y los parciales de `head
 **Opción 1 — Live Server (VS Code):** instala la extensión "Live Server", clic derecho sobre `index.html` → "Open with Live Server".
 
 **Opción 2 — Python:**
+
 ```bash
 python -m http.server 5500
 ```
+
 y abrir `http://localhost:5500` en el navegador.
 
 ## Funcionalidades implementadas
@@ -76,11 +78,11 @@ y abrir `http://localhost:5500` en el navegador.
 
 ## Uso de `localStorage`
 
-| Clave | Contenido |
-|---|---|
-| `newsly_favoritos_v1` | Arreglo de identificadores de noticias favoritas |
-| `newsly_noticias_personalizadas_v1` | Noticias creadas desde Administración |
-| `newsly_noticias_eliminadas_v1` | Identificadores de noticias base (JSON) eliminadas desde Administración |
+| Clave                               | Contenido                                                               |
+| ----------------------------------- | ----------------------------------------------------------------------- |
+| `newsly_favoritos_v1`               | Arreglo de identificadores de noticias favoritas                        |
+| `newsly_noticias_personalizadas_v1` | Noticias creadas desde Administración                                   |
+| `newsly_noticias_eliminadas_v1`     | Identificadores de noticias base (JSON) eliminadas desde Administración |
 
 El catálogo mostrado en la aplicación combina siempre `data/noticias.json` con las noticias personalizadas, excluyendo las eliminadas. La lectura de `localStorage` está protegida ante datos ausentes o corruptos (ver `js/storage.js`).
 
@@ -93,4 +95,4 @@ El catálogo mostrado en la aplicación combina siempre `data/noticias.json` con
 
 ## Autor
 
-[Nombre del estudiante] — Proyecto académico para el módulo de Desarrollo de Front-end.
+Mateo Alvarez Perez — Proyecto académico para el módulo de Desarrollo de Front-end.
