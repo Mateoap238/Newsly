@@ -42,8 +42,12 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
+  font-weight: 500;
   color: var(--color-primary);
   line-height: 1.2;
   margin: 0 0 var(--space-3);
@@ -109,7 +113,10 @@ main {
   border: 1px solid transparent;
   font-weight: 600;
   font-size: var(--fs-sm);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
 
 .boton--primario {
@@ -174,10 +181,22 @@ main {
   color: var(--color-accent-dark);
 }
 
-.badge--tecnologia { background: var(--color-cat-tecnologia-soft); color: var(--color-cat-tecnologia); }
-.badge--educacion { background: var(--color-cat-educacion-soft); color: var(--color-cat-educacion); }
-.badge--turismo { background: var(--color-cat-turismo-soft); color: var(--color-cat-turismo); }
-.badge--negocios { background: var(--color-cat-negocios-soft); color: var(--color-cat-negocios); }
+.badge--tecnologia {
+  background: var(--color-cat-tecnologia-soft);
+  color: var(--color-cat-tecnologia);
+}
+.badge--educacion {
+  background: var(--color-cat-educacion-soft);
+  color: var(--color-cat-educacion);
+}
+.badge--turismo {
+  background: var(--color-cat-turismo-soft);
+  color: var(--color-cat-turismo);
+}
+.badge--negocios {
+  background: var(--color-cat-negocios-soft);
+  color: var(--color-cat-negocios);
+}
 
 .estado-pill {
   display: inline-flex;
@@ -189,8 +208,14 @@ main {
   font-weight: 600;
 }
 
-.estado-pill--publicada { background: var(--color-success-soft); color: var(--color-success); }
-.estado-pill--borrador { background: var(--color-highlight-soft); color: #9a6b0c; }
+.estado-pill--publicada {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+.estado-pill--borrador {
+  background: var(--color-highlight-soft);
+  color: #9a6b0c;
+}
 
 .avatar-iniciales {
   display: inline-flex;
@@ -413,7 +438,9 @@ main {
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tarjeta-noticia:hover {
@@ -619,7 +646,7 @@ main {
   justify-content: space-between;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-4);
-  background: linear-gradient(0deg, rgba(0,0,0,0.65), transparent);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), transparent);
   color: #fff;
   font-size: var(--fs-xs);
 }
@@ -758,7 +785,11 @@ main {
 }
 
 .franja-compromiso {
-  background: linear-gradient(135deg, var(--color-accent-soft), var(--color-bg-alt));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-soft),
+    var(--color-bg-alt)
+  );
   border-radius: var(--radius-lg);
   padding: var(--space-7);
   display: grid;
@@ -1254,8 +1285,16 @@ main {
 
 .mapa-decorativo__lienzo {
   background:
-    repeating-linear-gradient(90deg, var(--color-border) 0 2px, transparent 2px 120px),
-    repeating-linear-gradient(0deg, var(--color-border) 0 2px, transparent 2px 90px),
+    repeating-linear-gradient(
+      90deg,
+      var(--color-border) 0 2px,
+      transparent 2px 120px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--color-border) 0 2px,
+      transparent 2px 90px
+    ),
     var(--color-bg-alt);
   min-height: 260px;
   display: flex;

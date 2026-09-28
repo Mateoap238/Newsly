@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestión de noticias · Newsly</title>
   <meta name="description" content="Panel de administración local de Newsly: crea, busca y elimina noticias.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Public+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body data-page="administracion">
   <div id="site-header"></div>
 
@@ -22,7 +27,9 @@
       <div>
         <span class="eyebrow">Newsly CMS · Panel local</span>
         <h1>Gestión de noticias</h1>
-        <p style="max-width:60ch; color:var(--color-text-muted)">Panel editorial de administración y publicación de artículos. Control local de contenidos, autorías y estados de publicación (los cambios se guardan en este navegador).</p>
+        <p style="max-width:60ch; color:var(--color-text-muted)">Panel editorial de administración y publicación de
+          artículos. Control local de contenidos, autorías y estados de publicación (los cambios se guardan en este
+          navegador).</p>
       </div>
       <a class="boton boton--primario" href="#panelCrear"><i class="bi bi-plus-circle"></i> Crear noticia</a>
     </div>
@@ -74,7 +81,8 @@
 
     <section class="admin-panel-crear" id="panelCrear">
       <h2 style="font-size:var(--fs-lg)">Crear nueva noticia</h2>
-      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Los campos con asterisco (*) son obligatorios. La noticia quedará guardada en este navegador.</p>
+      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Los campos con asterisco (*) son obligatorios. La
+        noticia quedará guardada en este navegador.</p>
 
       <form id="formularioAdmin" novalidate>
         <div class="admin-panel-crear__grid">
@@ -94,13 +102,15 @@
 
         <div class="campo" id="campoAdminDescripcion">
           <label for="adminDescripcion">Descripción breve *</label>
-          <textarea id="adminDescripcion" maxlength="220" style="min-height:80px" placeholder="Resumen que aparecerá en las tarjetas de noticia"></textarea>
+          <textarea id="adminDescripcion" maxlength="220" style="min-height:80px"
+            placeholder="Resumen que aparecerá en las tarjetas de noticia"></textarea>
           <p class="campo-error">La descripción debe tener entre 20 y 220 caracteres.</p>
         </div>
 
         <div class="campo" id="campoAdminContenido">
           <label for="adminContenido">Contenido completo *</label>
-          <textarea id="adminContenido" style="min-height:160px" placeholder="Escribe cada párrafo en una línea distinta"></textarea>
+          <textarea id="adminContenido" style="min-height:160px"
+            placeholder="Escribe cada párrafo en una línea distinta"></textarea>
           <p class="campo-error">Escribe al menos un párrafo con contenido real (mínimo 40 caracteres).</p>
         </div>
 
@@ -112,13 +122,14 @@
           </div>
           <div class="campo" id="campoAdminImagen">
             <label for="adminImagen">URL de imagen (opcional)</label>
-            <input type="text" id="adminImagen" placeholder="assets/images/noticia-01.jpg">
+            <input type="text" id="adminImagen" placeholder="assets/images/noticia-01.webp">
           </div>
         </div>
 
         <div class="admin-panel-crear__acciones">
           <button type="submit" class="boton boton--fantasma" data-estado="borrador">Guardar como borrador</button>
-          <button type="submit" class="boton boton--primario" data-estado="publicada"><i class="bi bi-rocket-takeoff"></i> Publicar noticia</button>
+          <button type="submit" class="boton boton--primario" data-estado="publicada"><i
+              class="bi bi-rocket-takeoff"></i> Publicar noticia</button>
         </div>
       </form>
     </section>
@@ -130,11 +141,13 @@
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalEliminarTitulo">
       <div class="modal__icono"><i class="bi bi-exclamation-triangle-fill"></i></div>
       <h2 id="modalEliminarTitulo" style="font-size:var(--fs-md)">¿Estás seguro de eliminar esta noticia?</h2>
-      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Esta acción retirará el artículo del portal público y no podrá deshacerse desde este navegador.</p>
+      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Esta acción retirará el artículo del portal
+        público y no podrá deshacerse desde este navegador.</p>
       <div class="modal__vista-previa" id="modalVistaPrevia"></div>
       <div class="modal__acciones">
         <button type="button" class="boton boton--fantasma" id="botonCancelarEliminar">Cancelar</button>
-        <button type="button" class="boton boton--peligro" id="botonConfirmarEliminar"><i class="bi bi-trash3"></i> Sí, eliminar noticia</button>
+        <button type="button" class="boton boton--peligro" id="botonConfirmarEliminar"><i class="bi bi-trash3"></i> Sí,
+          eliminar noticia</button>
       </div>
     </div>
   </div>
@@ -144,4 +157,5 @@
   <script src="js/common.js"></script>
   <script src="js/administracion.js"></script>
 </body>
+
 </html>
