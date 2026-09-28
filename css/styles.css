@@ -12,6 +12,12 @@
   display: none !important;
 }
 
+/* Alineación de los íconos de Bootstrap Icons junto a texto en línea. */
+.bi {
+  vertical-align: -0.14em;
+  line-height: 1;
+}
+
 html {
   scroll-behavior: smooth;
 }

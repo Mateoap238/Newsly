@@ -13,7 +13,7 @@ function renderizarError() {
   document.getElementById("migas").innerHTML = `<a href="index.html">Inicio</a> / <a href="noticias.html">Noticias</a>`;
   document.getElementById("contenidoDetalle").innerHTML = `
     <div class="estado-mensaje">
-      <div class="estado-mensaje__icono">🔎</div>
+      <div class="estado-mensaje__icono"><i class="bi bi-question-circle"></i></div>
       <h1>No encontramos esta noticia</h1>
       <p>Es posible que el enlace sea incorrecto o que la noticia haya sido eliminada del catálogo.</p>
       <a class="boton boton--primario" href="noticias.html">Volver al listado de noticias</a>
@@ -48,7 +48,7 @@ function renderizarArticulo(noticia) {
         </div>
         <div class="articulo__acciones">
           <button type="button" class="boton boton--fantasma btn-favorito-grande" data-fav-id="${noticia.id}" aria-pressed="${favorito}">
-            <span class="btn-favorito-grande__icono">${favorito ? "★" : "☆"}</span>
+            <i class="btn-favorito-grande__icono ${favorito ? "bi bi-star-fill" : "bi bi-star"}"></i>
             <span class="btn-favorito-grande__texto">${favorito ? "Guardado" : "Guardar"}</span>
           </button>
         </div>
@@ -89,7 +89,7 @@ async function renderizarRelacionadas(noticia, todas) {
 
 document.addEventListener("newsly:favoritos-cambiaron", (evento) => {
   document.querySelectorAll(`.articulo .btn-favorito-grande[data-fav-id="${evento.detail.id}"]`).forEach((boton) => {
-    boton.querySelector(".btn-favorito-grande__icono").textContent = evento.detail.favorito ? "★" : "☆";
+    boton.querySelector(".btn-favorito-grande__icono").className = `btn-favorito-grande__icono bi ${evento.detail.favorito ? "bi-star-fill" : "bi-star"}`;
     boton.querySelector(".btn-favorito-grande__texto").textContent = evento.detail.favorito ? "Guardado" : "Guardar";
   });
 });

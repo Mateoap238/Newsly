@@ -53,9 +53,9 @@ function filaAdminHTML(noticia) {
       <td><span class="badge badge--${claseCategoria(noticia.categoria)}">${noticia.categoria}</span></td>
       <td>${escaparHTML(noticia.autor)}</td>
       <td>${formatearFecha(noticia.fecha)}</td>
-      <td><span class="estado-pill estado-pill--${noticia.estado}">${noticia.estado === "publicada" ? "● Publicado" : "● Borrador"}</span></td>
+      <td><span class="estado-pill estado-pill--${noticia.estado}"><i class="bi bi-circle-fill"></i> ${noticia.estado === "publicada" ? "Publicado" : "Borrador"}</span></td>
       <td class="admin-tabla__acciones">
-        <button type="button" class="icono-boton icono-boton--peligro" data-eliminar-id="${noticia.id}" aria-label="Eliminar noticia">🗑</button>
+        <button type="button" class="icono-boton icono-boton--peligro" data-eliminar-id="${noticia.id}" aria-label="Eliminar noticia"><i class="bi bi-trash3"></i></button>
       </td>
     </tr>
   `;
@@ -96,9 +96,14 @@ async function recargarDatosAdmin() {
   renderizarTablaAdmin();
 }
 
+const ICONO_MENSAJE_ADMIN = {
+  exito: "bi-check-circle-fill",
+  error: "bi-exclamation-circle-fill",
+};
+
 function mostrarMensajeAdmin(texto, tipo) {
   const mensaje = document.getElementById("mensajeAdmin");
-  mensaje.textContent = texto;
+  mensaje.innerHTML = `<i class="bi ${ICONO_MENSAJE_ADMIN[tipo]}"></i> ${texto}`;
   mensaje.className = `mensaje-admin visible mensaje-admin--${tipo}`;
   mensaje.scrollIntoView({ behavior: "smooth", block: "start" });
   window.setTimeout(() => mensaje.classList.remove("visible"), 6000);
@@ -134,7 +139,7 @@ async function confirmarEliminacion() {
   }
   cerrarModalEliminar();
   await recargarDatosAdmin();
-  mostrarMensajeAdmin("✅ Noticia eliminada del portal correctamente.", "exito");
+  mostrarMensajeAdmin("Noticia eliminada del portal correctamente.", "exito");
 }
 
 /* ---------- Crear noticia ---------- */
@@ -179,7 +184,7 @@ async function manejarEnvioFormularioAdmin(evento) {
 
   limpiarErroresFormulario();
   if (!validarFormularioAdmin(datos)) {
-    mostrarMensajeAdmin("⚠ Revisa los campos marcados en rojo antes de continuar.", "error");
+    mostrarMensajeAdmin("Revisa los campos marcados en rojo antes de continuar.", "error");
     return;
   }
 
@@ -205,8 +210,8 @@ async function manejarEnvioFormularioAdmin(evento) {
   await recargarDatosAdmin();
   mostrarMensajeAdmin(
     estadoSeleccionado === "publicada"
-      ? `✅ Noticia publicada con éxito (ID #NW-${nuevaNoticia.id}). Ya es visible en el portal.`
-      : `📝 Noticia guardada como borrador (ID #NW-${nuevaNoticia.id}).`,
+      ? `Noticia publicada con éxito (ID #NW-${nuevaNoticia.id}). Ya es visible en el portal.`
+      : `Noticia guardada como borrador (ID #NW-${nuevaNoticia.id}).`,
     "exito"
   );
 }

@@ -6,7 +6,8 @@
   <title>Mis favoritos · Newsly</title>
   <meta name="description" content="Tus noticias guardadas en Newsly para leer más tarde.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -26,22 +27,22 @@
         </p>
       </div>
       <div class="favoritos-cabecera__acciones">
-        <button type="button" class="boton boton--peligro" id="botonLimpiarLista">🗑 Limpiar lista</button>
+        <button type="button" class="boton boton--peligro" id="botonLimpiarLista"><i class="bi bi-trash3"></i> Limpiar lista</button>
       </div>
     </div>
 
     <div class="chips-categoria" style="margin: var(--space-5) 0">
       <div class="chips-categoria__lista" id="chipsCategoriaFavoritos"></div>
-      <span class="favoritos-tiempo" id="tiempoEstimado">⏱ Tiempo estimado total: 0 min</span>
+      <span class="favoritos-tiempo" id="tiempoEstimado"><i class="bi bi-clock-history"></i> Tiempo estimado total: 0 min</span>
     </div>
 
     <div id="rejillaFavoritos" class="rejilla-noticias" aria-live="polite"></div>
 
     <div id="estadoVacioFavoritos" class="estado-mensaje" hidden>
-      <div class="estado-mensaje__icono">📖</div>
+      <div class="estado-mensaje__icono"><i class="bi bi-bookmark-heart"></i></div>
       <h3>Todavía no tienes noticias guardadas</h3>
       <p>Explora nuestras publicaciones y haz clic en el ícono de favorito para conservar lecturas pendientes y revisarlas cuando quieras.</p>
-      <a class="boton boton--primario" href="noticias.html">🧭 Explorar noticias</a>
+      <a class="boton boton--primario" href="noticias.html"><i class="bi bi-compass"></i> Explorar noticias</a>
     </div>
   </main>
 

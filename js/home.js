@@ -5,10 +5,10 @@
 */
 
 const ICONO_CATEGORIA = {
-  "Tecnología": "💻",
-  "Educación": "🎓",
-  "Turismo": "🧭",
-  "Negocios": "📈",
+  "Tecnología": "bi-cpu",
+  "Educación": "bi-mortarboard",
+  "Turismo": "bi-compass",
+  "Negocios": "bi-graph-up-arrow",
 };
 
 const DESCRIPCION_CATEGORIA = {
@@ -22,14 +22,14 @@ function botonFavoritoGrande(noticia) {
   const activo = esFavorito(noticia.id);
   return `
     <button type="button" class="boton boton--fantasma btn-favorito-grande" data-fav-id="${noticia.id}" aria-pressed="${activo}">
-      <span class="btn-favorito-grande__icono">${activo ? "★" : "☆"}</span>
+      <i class="btn-favorito-grande__icono ${activo ? "bi bi-star-fill" : "bi bi-star"}"></i>
       <span class="btn-favorito-grande__texto">${activo ? "Guardado en favoritos" : "Guardar en favoritos"}</span>
     </button>
   `;
 }
 
 function actualizarBotonGrande(boton, favorito) {
-  boton.querySelector(".btn-favorito-grande__icono").textContent = favorito ? "★" : "☆";
+  boton.querySelector(".btn-favorito-grande__icono").className = `btn-favorito-grande__icono bi ${favorito ? "bi-star-fill" : "bi-star"}`;
   boton.querySelector(".btn-favorito-grande__texto").textContent = favorito ? "Guardado en favoritos" : "Guardar en favoritos";
 }
 
@@ -71,7 +71,7 @@ function renderCategorias(noticias) {
   contenedor.innerHTML = CATEGORIAS.map((categoria) => `
     <a class="categoria-tarjeta" href="noticias.html?categoria=${encodeURIComponent(categoria)}">
       <span class="categoria-tarjeta__conteo">${conteo[categoria]} artículos</span>
-      <span class="categoria-tarjeta__icono">${ICONO_CATEGORIA[categoria]}</span>
+      <span class="categoria-tarjeta__icono"><i class="bi ${ICONO_CATEGORIA[categoria]}"></i></span>
       <h3>${categoria}</h3>
       <p>${DESCRIPCION_CATEGORIA[categoria]}</p>
     </a>

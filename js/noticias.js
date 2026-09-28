@@ -138,11 +138,11 @@ function tarjetaNoticiaHTML(noticia) {
         data-fav-id="${noticia.id}"
         aria-pressed="${favorito}"
         aria-label="${favorito ? "Quitar de favoritos" : "Guardar en favoritos"}"
-      >★</button>
+      ><i class="bi bi-star-fill"></i></button>
       <div class="tarjeta-noticia__cuerpo">
         <p class="tarjeta-noticia__meta">
-          <span>📅 ${formatearFecha(noticia.fecha)}</span>
-          <span>⏱ ${noticia.tiempoLectura} min de lectura</span>
+          <span><i class="bi bi-calendar3"></i> ${formatearFecha(noticia.fecha)}</span>
+          <span><i class="bi bi-clock"></i> ${noticia.tiempoLectura} min de lectura</span>
         </p>
         <h3 class="tarjeta-noticia__titulo">
           <a href="detalle.html?id=${noticia.id}">${escaparHTML(noticia.titulo)}</a>

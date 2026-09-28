@@ -21,17 +21,17 @@ function tarjetaFavoritoHTML(noticia) {
           <span class="badge badge--${claseCategoria(noticia.categoria)}">${noticia.categoria}</span>
         </div>
       </a>
-      <button type="button" class="btn-favorito es-favorito" data-fav-id="${noticia.id}" aria-pressed="true" aria-label="Quitar de favoritos">★</button>
+      <button type="button" class="btn-favorito es-favorito" data-fav-id="${noticia.id}" aria-pressed="true" aria-label="Quitar de favoritos"><i class="bi bi-star-fill"></i></button>
       <div class="tarjeta-noticia__cuerpo">
         <p class="tarjeta-noticia__meta">
-          <span>📅 ${formatearFecha(noticia.fecha)}</span>
-          <span>⏱ ${noticia.tiempoLectura} min de lectura</span>
+          <span><i class="bi bi-calendar3"></i> ${formatearFecha(noticia.fecha)}</span>
+          <span><i class="bi bi-clock"></i> ${noticia.tiempoLectura} min de lectura</span>
         </p>
         <h3 class="tarjeta-noticia__titulo"><a href="detalle.html?id=${noticia.id}">${escaparHTML(noticia.titulo)}</a></h3>
         <p class="tarjeta-noticia__resumen">${escaparHTML(noticia.descripcion)}</p>
         <div class="tarjeta-noticia__pie">
-          <a class="boton boton--primario" href="detalle.html?id=${noticia.id}">Ver noticia →</a>
-          <button type="button" class="enlace-ver-mas" style="background:none;border:none" data-quitar-favorito="${noticia.id}">🔖 Eliminar</button>
+          <a class="boton boton--primario" href="detalle.html?id=${noticia.id}">Ver noticia <i class="bi bi-arrow-right"></i></a>
+          <button type="button" class="enlace-ver-mas" style="background:none;border:none" data-quitar-favorito="${noticia.id}"><i class="bi bi-bookmark-x"></i> Eliminar</button>
         </div>
       </div>
     </article>
@@ -70,7 +70,7 @@ function renderizarTodo() {
   document.getElementById("totalFavoritosEtiqueta").textContent = favoritas.length === 1 ? "noticia" : "noticias";
 
   const minutos = favoritas.reduce((total, n) => total + (n.tiempoLectura || 0), 0);
-  document.getElementById("tiempoEstimado").textContent = `⏱ Tiempo estimado total: ${minutos} min`;
+  document.getElementById("tiempoEstimado").innerHTML = `<i class="bi bi-clock-history"></i> Tiempo estimado total: ${minutos} min`;
 
   const rejilla = document.getElementById("rejillaFavoritos");
   const estadoVacio = document.getElementById("estadoVacioFavoritos");
