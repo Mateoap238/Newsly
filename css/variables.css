@@ -1,0 +1,76 @@
+/*
+  Newsly · Tokens de diseño
+  Extraídos de los mockups de Figma de la Entrega 1 (carpeta /mockups).
+  Centralizar aquí colores, tipografías, radios y espaciados evita
+  valores sueltos en el resto de las hojas de estilo.
+*/
+
+:root {
+  /* Colores base */
+  --color-bg: #eef1fb;
+  --color-bg-alt: #e4e9fb;
+  --color-surface: #ffffff;
+  --color-border: #dde2f3;
+
+  --color-primary: #101a35;
+  --color-primary-soft: #2c3a63;
+  --color-accent: #2955ff;
+  --color-accent-dark: #1c3fd1;
+  --color-accent-soft: #e7ecff;
+  --color-highlight: #f5a524;
+  --color-highlight-soft: #fdf1dc;
+
+  --color-text: #1b2237;
+  --color-text-muted: #5b6480;
+  --color-text-inverse: #ffffff;
+
+  --color-success: #1e8e5a;
+  --color-success-soft: #e5f6ee;
+  --color-error: #d64545;
+  --color-error-soft: #fbe7e7;
+
+  /* Categorías editoriales */
+  --color-cat-tecnologia: #2955ff;
+  --color-cat-tecnologia-soft: #e7ecff;
+  --color-cat-educacion: #6d4fd1;
+  --color-cat-educacion-soft: #efe9fb;
+  --color-cat-turismo: #c96a2e;
+  --color-cat-turismo-soft: #fbe9dc;
+  --color-cat-negocios: #b5860c;
+  --color-cat-negocios-soft: #faf0d6;
+
+  /* Tipografía */
+  --font-heading: "Playfair Display", "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 2rem;
+  --fs-2xl: 2.75rem;
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Bordes y sombra */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 10px 30px -18px rgba(16, 26, 53, 0.35);
+  --shadow-hover: 0 16px 34px -16px rgba(16, 26, 53, 0.4);
+
+  /* Layout */
+  --container-max: 1200px;
+  --header-height: 76px;
+}

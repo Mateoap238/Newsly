@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsly · Periodismo digital riguroso e independiente</title>
+  <meta name="description" content="Newsly: análisis, reportajes y actualidad en Tecnología, Educación, Turismo y Negocios.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="inicio">
+  <div id="site-header"></div>
+
+  <main>
+    <div class="franja-ultima-hora">
+      <div class="contenedor">
+        <span class="franja-ultima-hora__etiqueta">Última hora</span>
+        <span id="ultimaHoraTitulo">Cargando la noticia principal…</span>
+        <span>Bogotá (COT)</span>
+      </div>
+    </div>
+
+    <section class="contenedor">
+      <div id="heroPrincipal" class="hero-principal" aria-live="polite">
+        <p>Cargando portada…</p>
+      </div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="seccion__encabezado">
+        <div>
+          <span class="eyebrow">Exploración temática</span>
+          <h2>Categorías destacadas</h2>
+        </div>
+        <p style="max-width:34ch; color:var(--color-text-muted)">Sigue el pulso periodístico clasificado por áreas estratégicas y líneas editoriales continuas.</p>
+      </div>
+      <div id="categoriasGrid" class="categorias-grid"></div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="seccion__encabezado">
+        <div>
+          <span class="eyebrow">Noticias destacadas</span>
+          <h2>Selección curada por el consejo editorial</h2>
+        </div>
+        <a class="enlace-ver-mas" href="noticias.html">Ver todas las destacadas →</a>
+      </div>
+      <div id="destacadasGrid" class="destacadas-grid"></div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="seccion__encabezado">
+        <div>
+          <span class="eyebrow">Ritmo del presente</span>
+          <h2>Últimas noticias</h2>
+        </div>
+        <a class="enlace-ver-mas" href="noticias.html">Explorar todas las noticias →</a>
+      </div>
+      <div class="ultimas-noticias">
+        <div id="noticiaPrincipalLista" class="noticia-principal-lista"></div>
+        <div id="listaBreve" class="lista-breve"></div>
+      </div>
+    </section>
+
+    <section class="contenedor">
+      <div class="franja-compromiso">
+        <div>
+          <span class="eyebrow">Nuestro compromiso ético</span>
+          <h2>Periodismo riguroso, independiente y pensado para lectores exigentes.</h2>
+          <p>En un entorno saturado de inmediatez superficial, Newsly defiende el análisis reposado, la verificación documental exhaustiva y la transparencia sin concesiones comerciales.</p>
+          <div class="franja-compromiso__stats">
+            <div><strong>100%</strong><span>Financiación libre e independiente</span></div>
+            <div><strong>24+</strong><span>Corresponsales internacionales</span></div>
+            <div><strong>0</strong><span>Cosas sin contrastar</span></div>
+          </div>
+        </div>
+        <div class="franja-compromiso__acciones">
+          <a class="boton boton--primario" href="nosotros.html">Conocer a nuestra redacción</a>
+          <a class="boton boton--fantasma" href="nosotros.html#estandar">Leer estatuto de redacción</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion contenedor">
+      <div class="cta-doble">
+        <div class="cta-tarjeta">
+          <span class="eyebrow">📨 Despacho editorial matutino</span>
+          <h3>Comienza tu jornada con claridad informativa</h3>
+          <p>A las 07:00 AM enviamos a tu bandeja una síntesis analítica de cinco minutos con lo verdaderamente crucial del día.</p>
+          <form class="formulario-newsletter" novalidate>
+            <label class="sr-solo" for="homeNewsletterEmail">Correo electrónico</label>
+            <input type="email" id="homeNewsletterEmail" name="email" placeholder="Ingresa tu correo electrónico…" required>
+            <button type="submit" class="boton boton--primario">Suscribirme gratis</button>
+            <p class="formulario-newsletter__mensaje" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="cta-tarjeta">
+          <span class="eyebrow">📡 Canal de fuentes seguras</span>
+          <h3>¿Tienes una primicia o sugerencia editorial? Escríbenos</h3>
+          <p>Garantizamos estricta confidencialidad bajo secreto profesional y protocolos de comunicación encriptada de extremo a extremo.</p>
+          <a class="boton boton--fantasma" href="contacto.html">Contactar a la mesa de investigación →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

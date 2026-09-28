@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explora nuestras noticias · Newsly</title>
+  <meta name="description" content="Busca y filtra noticias de Newsly por categoría, palabra clave o autor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="noticias">
+  <div id="site-header"></div>
+
+  <main class="contenedor seccion">
+    <p class="eyebrow">Edición central · Archivo periodístico</p>
+    <div class="listado-cabecera">
+      <div>
+        <h1>Explora nuestras noticias</h1>
+        <p style="max-width:60ch; color:var(--color-text-muted)">Descubre análisis rigurosos, reportajes exclusivos y actualidad curados por nuestra redacción en Tecnología, Educación, Turismo y Negocios.</p>
+      </div>
+      <div class="listado-cabecera__stats">
+        <div><strong id="statPublicaciones">0</strong><span>Publicaciones</span></div>
+        <div><strong id="statEspecialidades">4</strong><span>Especialidades</span></div>
+      </div>
+    </div>
+
+    <div class="panel-filtros">
+      <div class="panel-filtros__busqueda">
+        <label class="sr-solo" for="filtroTexto">Buscar por palabras clave, tema o autor</label>
+        <input type="search" id="filtroTexto" placeholder="Buscar por palabras clave, tema o autor…">
+        <label class="sr-solo" for="filtroOrden">Ordenar por</label>
+        <select id="filtroOrden">
+          <option value="recientes">Más recientes</option>
+          <option value="antiguas">Más antiguas</option>
+          <option value="titulo">Título (A-Z)</option>
+        </select>
+      </div>
+      <div class="chips-categoria">
+        <div class="chips-categoria__lista" id="chipsCategoria" role="group" aria-label="Filtrar por categoría">
+          <button type="button" class="chip activo" data-categoria="Todas">Todas</button>
+        </div>
+        <span class="resultados-info" id="resultadosInfo"></span>
+      </div>
+    </div>
+
+    <div id="rejillaNoticias" class="rejilla-noticias" aria-live="polite"></div>
+
+    <div id="estadoVacio" class="estado-mensaje" hidden>
+      <div class="estado-mensaje__icono">🗞️</div>
+      <h3>No encontramos noticias con esos filtros</h3>
+      <p>Prueba con otra palabra clave o restablece los filtros para ver todo el catálogo.</p>
+      <button type="button" class="boton boton--primario" id="botonRestablecer">Restablecer filtros</button>
+    </div>
+
+    <button type="button" class="boton boton--fantasma boton-cargar-mas" id="botonCargarMas">+ Cargar más noticias</button>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/listado.js"></script>
+</body>
+</html>

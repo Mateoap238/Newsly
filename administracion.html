@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de noticias · Newsly</title>
+  <meta name="description" content="Panel de administración local de Newsly: crea, busca y elimina noticias.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="administracion">
+  <div id="site-header"></div>
+
+  <main class="contenedor seccion">
+    <nav class="migas"><a href="index.html">Inicio</a> / Gestión</nav>
+
+    <div class="admin-cabecera">
+      <div>
+        <span class="eyebrow">Newsly CMS · Panel local</span>
+        <h1>Gestión de noticias</h1>
+        <p style="max-width:60ch; color:var(--color-text-muted)">Panel editorial de administración y publicación de artículos. Control local de contenidos, autorías y estados de publicación (los cambios se guardan en este navegador).</p>
+      </div>
+      <a class="boton boton--primario" href="#panelCrear">+ Crear noticia</a>
+    </div>
+
+    <div id="mensajeAdmin" class="mensaje-admin" role="status"></div>
+
+    <div class="admin-stats">
+      <div class="admin-stat"><span>Total gestionadas</span><strong id="statTotal">0</strong></div>
+      <div class="admin-stat"><span>Publicadas en vivo</span><strong id="statPublicadas">0</strong></div>
+      <div class="admin-stat"><span>Borradores / revisión</span><strong id="statBorradores">0</strong></div>
+      <div class="admin-stat"><span>Velocidad de lectura</span><strong id="statLectura">0 min</strong></div>
+    </div>
+
+    <div class="panel-filtros">
+      <div class="panel-filtros__busqueda">
+        <label class="sr-solo" for="adminBusqueda">Buscar noticias</label>
+        <input type="search" id="adminBusqueda" placeholder="Buscar noticias por título, autor o palabra clave…">
+        <label class="sr-solo" for="adminCategoria">Categoría</label>
+        <select id="adminCategoria">
+          <option value="Todas">Categoría: Todas</option>
+        </select>
+        <label class="sr-solo" for="adminEstado">Estado</label>
+        <select id="adminEstado">
+          <option value="Todos">Estado: Todos</option>
+          <option value="publicada">Publicada</option>
+          <option value="borrador">Borrador</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="admin-tabla-envoltorio">
+      <table class="admin-tabla">
+        <thead>
+          <tr>
+            <th>Miniatura</th>
+            <th>Título y resumen</th>
+            <th>Categoría</th>
+            <th>Autor</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoTablaAdmin"></tbody>
+      </table>
+    </div>
+
+    <p class="resultados-info" id="adminResultadosInfo"></p>
+
+    <section class="admin-panel-crear" id="panelCrear">
+      <h2 style="font-size:var(--fs-lg)">Crear nueva noticia</h2>
+      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Los campos con asterisco (*) son obligatorios. La noticia quedará guardada en este navegador.</p>
+
+      <form id="formularioAdmin" novalidate>
+        <div class="admin-panel-crear__grid">
+          <div class="campo" id="campoAdminTitulo">
+            <label for="adminTitulo">Título de la noticia *</label>
+            <input type="text" id="adminTitulo" maxlength="90" placeholder="Máximo 90 caracteres">
+            <p class="campo-error">El título debe tener entre 10 y 90 caracteres.</p>
+          </div>
+          <div class="campo" id="campoAdminCategoria">
+            <label for="adminNuevaCategoria">Categoría *</label>
+            <select id="adminNuevaCategoria">
+              <option value="">Selecciona una categoría…</option>
+            </select>
+            <p class="campo-error">Selecciona una categoría.</p>
+          </div>
+        </div>
+
+        <div class="campo" id="campoAdminDescripcion">
+          <label for="adminDescripcion">Descripción breve *</label>
+          <textarea id="adminDescripcion" maxlength="220" style="min-height:80px" placeholder="Resumen que aparecerá en las tarjetas de noticia"></textarea>
+          <p class="campo-error">La descripción debe tener entre 20 y 220 caracteres.</p>
+        </div>
+
+        <div class="campo" id="campoAdminContenido">
+          <label for="adminContenido">Contenido completo *</label>
+          <textarea id="adminContenido" style="min-height:160px" placeholder="Escribe cada párrafo en una línea distinta"></textarea>
+          <p class="campo-error">Escribe al menos un párrafo con contenido real (mínimo 40 caracteres).</p>
+        </div>
+
+        <div class="admin-panel-crear__grid">
+          <div class="campo" id="campoAdminAutor">
+            <label for="adminAutor">Autor asignado *</label>
+            <input type="text" id="adminAutor" placeholder="Nombre del periodista responsable">
+            <p class="campo-error">Ingresa el nombre del autor.</p>
+          </div>
+          <div class="campo" id="campoAdminImagen">
+            <label for="adminImagen">URL de imagen (opcional)</label>
+            <input type="text" id="adminImagen" placeholder="assets/images/noticia-01.jpg">
+          </div>
+        </div>
+
+        <div class="admin-panel-crear__acciones">
+          <button type="submit" class="boton boton--fantasma" data-estado="borrador">Guardar como borrador</button>
+          <button type="submit" class="boton boton--primario" data-estado="publicada">🚀 Publicar noticia</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="modal-fondo" id="modalEliminar">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalEliminarTitulo">
+      <div class="modal__icono">⚠</div>
+      <h2 id="modalEliminarTitulo" style="font-size:var(--fs-md)">¿Estás seguro de eliminar esta noticia?</h2>
+      <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Esta acción retirará el artículo del portal público y no podrá deshacerse desde este navegador.</p>
+      <div class="modal__vista-previa" id="modalVistaPrevia"></div>
+      <div class="modal__acciones">
+        <button type="button" class="boton boton--fantasma" id="botonCancelarEliminar">Cancelar</button>
+        <button type="button" class="boton boton--peligro" id="botonConfirmarEliminar">🗑 Sí, eliminar noticia</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/administracion.js"></script>
+</body>
+</html>

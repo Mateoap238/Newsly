@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto · Newsly</title>
+  <meta name="description" content="Escríbele a la redacción de Newsly: propuestas editoriales, pistas informativas o consultas técnicas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contacto">
+  <div id="site-header"></div>
+
+  <main class="contenedor seccion">
+    <nav class="migas"><a href="index.html">Inicio</a> / Redacción Central</nav>
+    <h1>Hablemos</h1>
+    <p style="max-width:60ch; color:var(--color-text-muted)">
+      ¿Tienes alguna pista informativa, propuesta de colaboración, comentario sobre nuestras publicaciones o consulta técnica? Nuestro equipo editorial y de redacción responde en menos de 24 horas hábiles.
+    </p>
+
+    <div class="contacto-grid">
+      <div>
+        <div class="dato-contacto">
+          <span class="dato-contacto__icono">📧</span>
+          <div>
+            <strong>Correo electrónico</strong>
+            <span>redaccion@newsly.com</span>
+            <span>contacto@newsly.com</span>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <span class="dato-contacto__icono">📞</span>
+          <div>
+            <strong>Teléfono editorial</strong>
+            <span>+57 (601) 745 2890</span>
+            <span>Línea directa redacción Bogotá</span>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <span class="dato-contacto__icono">🕒</span>
+          <div>
+            <strong>Horario de atención</strong>
+            <span>Lunes a Viernes de 07:00 a 18:00 (GMT-5 / COT)</span>
+          </div>
+        </div>
+        <div class="dato-contacto">
+          <span class="dato-contacto__icono">📍</span>
+          <div>
+            <strong>Sede central</strong>
+            <span>Calle 72 # 10-34, Piso 8, Chapinero</span>
+            <span>Zona Financiera, Bogotá D.C., Colombia</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="formulario-contacto" id="formularioContacto" novalidate>
+        <h2 style="font-size:var(--fs-lg)">Redactar mensaje</h2>
+        <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Los campos indicados con asterisco (*) son obligatorios.</p>
+
+        <div class="mensaje-confirmacion" id="mensajeConfirmacion" role="status">
+          ✅ Tu mensaje fue enviado correctamente. Te responderemos pronto.
+        </div>
+
+        <div class="campo" id="campoNombre">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Sofía Morales Ruiz">
+          <p class="campo-error">Ingresa tu nombre completo (mínimo 3 caracteres).</p>
+        </div>
+
+        <div class="campo" id="campoCorreo">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" placeholder="usuario@dominio.com">
+          <p class="campo-error">Ingresa un correo electrónico válido como usuario@dominio.com.</p>
+        </div>
+
+        <div class="campo" id="campoAsunto">
+          <label for="asunto">Asunto *</label>
+          <select id="asunto" name="asunto">
+            <option value="">Selecciona un asunto…</option>
+            <option value="Propuesta editorial">Propuesta editorial</option>
+            <option value="Pista informativa">Pista informativa</option>
+            <option value="Consulta técnica">Consulta técnica</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <p class="campo-error">Selecciona un asunto para tu mensaje.</p>
+        </div>
+
+        <div class="campo" id="campoMensaje">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" maxlength="1000" placeholder="Escribe tu mensaje…"></textarea>
+          <p class="campo-error">El mensaje debe tener al menos 20 caracteres.</p>
+        </div>
+
+        <div class="campo campo-checkbox" id="campoPolitica">
+          <input type="checkbox" id="aceptaPolitica" name="aceptaPolitica">
+          <label for="aceptaPolitica" style="margin:0">Acepto el tratamiento de mis datos personales de acuerdo con la Política de Privacidad de Newsly *</label>
+        </div>
+        <p class="campo-error" id="errorPolitica" style="margin-top:calc(-1 * var(--space-3)); margin-bottom:var(--space-4)">Debes aceptar el tratamiento de datos para continuar.</p>
+
+        <button type="submit" class="boton boton--primario">Enviar mensaje ➤</button>
+      </form>
+    </div>
+
+    <div class="mapa-decorativo">
+      <div class="mapa-decorativo__lienzo">
+        <span class="mapa-decorativo__marcador">📍 Newsly Redacción Bogotá — Calle 72 # 10-34, Chapinero</span>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

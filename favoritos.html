@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis favoritos · Newsly</title>
+  <meta name="description" content="Tus noticias guardadas en Newsly para leer más tarde.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="favoritos">
+  <div id="site-header"></div>
+
+  <main class="contenedor seccion">
+    <nav class="migas"><a href="index.html">Inicio</a> / Favoritos</nav>
+
+    <div class="favoritos-cabecera">
+      <div>
+        <span class="eyebrow">Colección personal</span>
+        <h1>Mis favoritos</h1>
+        <p style="max-width:60ch; color:var(--color-text-muted)">
+          Artículos guardados para leer con tranquilidad. Tienes <strong id="totalFavoritos">0</strong> <span id="totalFavoritosEtiqueta">noticias</span> en tu lista de lectura personal.
+        </p>
+      </div>
+      <div class="favoritos-cabecera__acciones">
+        <button type="button" class="boton boton--peligro" id="botonLimpiarLista">🗑 Limpiar lista</button>
+      </div>
+    </div>
+
+    <div class="chips-categoria" style="margin: var(--space-5) 0">
+      <div class="chips-categoria__lista" id="chipsCategoriaFavoritos"></div>
+      <span class="favoritos-tiempo" id="tiempoEstimado">⏱ Tiempo estimado total: 0 min</span>
+    </div>
+
+    <div id="rejillaFavoritos" class="rejilla-noticias" aria-live="polite"></div>
+
+    <div id="estadoVacioFavoritos" class="estado-mensaje" hidden>
+      <div class="estado-mensaje__icono">📖</div>
+      <h3>Todavía no tienes noticias guardadas</h3>
+      <p>Explora nuestras publicaciones y haz clic en el ícono de favorito para conservar lecturas pendientes y revisarlas cuando quieras.</p>
+      <a class="boton boton--primario" href="noticias.html">🧭 Explorar noticias</a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/noticias.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/favoritos.js"></script>
+</body>
+</html>

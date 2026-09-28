@@ -1,0 +1,291 @@
+[
+  {
+    "id": 1,
+    "titulo": "Computación cuántica: el avance que transformará la ciberseguridad global en la próxima década",
+    "slug": "computacion-cuantica-ciberseguridad-global",
+    "categoria": "Tecnología",
+    "descripcion": "Un consorcio internacional logra estabilizar 1.024 cúbits ópticos a temperatura ambiente, abriendo una nueva era en el procesamiento masivo de datos y el cifrado cuántico inviolable.",
+    "contenido": [
+      "En los sótanos blindados del Instituto Europeo de Tecnologías Fotónicas Avanzadas, una pantalla holográfica acaba de marcar un hito histórico: 1.024 cúbits ópticos sincronizados a temperatura ambiente sin perder coherencia durante más de dos horas.",
+      "Este descubrimiento no es únicamente una proeza en el campo de la física del estado sólido. Implica, en términos prácticos, que los algoritmos de cifrado asimétrico sobre el que reposa la totalidad del comercio electrónico, las comunicaciones diplomáticas y las reservas federales internacionales, tienen una fecha de caducidad mucho más cercana de lo previsto.",
+      "Hasta la fecha, la necesidad de operar a fracciones ínfimas por encima del cero absoluto limitaba los ordenadores cuánticos a complejos centros de datos con presupuestos multimillonarios. Al prescindir de la refrigeración criogénica gracias a resonadores de microcavidad fotónica, el equipo ha reducido drásticamente la barrera para su adopción industrial.",
+      "Las entidades financieras internacionales ya han comenzado a ejecutar planes de contingencia conocidos como Harvest Now, Decrypt Later, donde actores estatales almacenan terabytes de comunicaciones cifradas en previsión de que dispositivos como el presentado hoy puedan leerlas retrospectivamente."
+    ],
+    "imagen": "assets/images/noticia-01.jpg",
+    "autor": "Carlos Mendoza",
+    "fecha": "2025-05-14",
+    "tiempoLectura": 6,
+    "destacada": true,
+    "estado": "publicada"
+  },
+  {
+    "id": 2,
+    "titulo": "Ciberseguridad y soberanía de datos en infraestructuras críticas",
+    "slug": "ciberseguridad-soberania-datos-infraestructuras-criticas",
+    "categoria": "Tecnología",
+    "descripcion": "Organismos continentales unifican protocolos para responder ante brechas de seguridad generadas por actores estatales sobre redes eléctricas y de telecomunicaciones.",
+    "contenido": [
+      "Los organismos de ciberdefensa de Iberoamérica firmaron esta semana un memorando de cooperación técnica para estandarizar la respuesta ante incidentes que comprometan infraestructuras críticas: redes eléctricas, plantas de tratamiento de agua y sistemas de telecomunicaciones.",
+      "El acuerdo llega tras detectarse un incremento sostenido de intentos de intrusión dirigidos a sistemas de control industrial (SCADA) en la región, muchos de ellos vinculados a campañas de espionaje de largo plazo más que a sabotaje inmediato.",
+      "Especialistas consultados coinciden en que la soberanía de datos se ha convertido en un asunto de seguridad nacional al mismo nivel que el control territorial, y llaman a invertir en talento local de ciberseguridad en lugar de depender exclusivamente de proveedores externos."
+    ],
+    "imagen": "assets/images/noticia-02.jpg",
+    "autor": "Andrés Navarro",
+    "fecha": "2025-05-10",
+    "tiempoLectura": 7,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 3,
+    "titulo": "Baterías de estado sólido y el fin definitivo de la ansiedad por autonomía eléctrica",
+    "slug": "baterias-estado-solido-autonomia-electrica",
+    "categoria": "Tecnología",
+    "descripcion": "Las plantas piloto en Alemania y Japón confirman cargas completas en menos de siete minutos y una vida útil superior a veinte años de ciclos intensivos.",
+    "contenido": [
+      "Las plantas piloto de baterías de estado sólido instaladas en Alemania y Japón confirmaron esta semana tiempos de carga completa inferiores a siete minutos, junto con una vida útil proyectada de más de veinte años bajo ciclos de uso intensivo.",
+      "A diferencia de las celdas de iones de litio convencionales, el electrolito sólido elimina el riesgo de fugas y reduce de forma drástica la probabilidad de incendios térmicos, uno de los mayores obstáculos para la adopción masiva de vehículos eléctricos.",
+      "El análisis comparativo frente a celdas de iones de litio clásicas muestra una densidad energética incrementada de forma notable, lo que podría duplicar la autonomía de los vehículos actuales sin aumentar su peso."
+    ],
+    "imagen": "assets/images/noticia-03.jpg",
+    "autor": "Elena Santoro",
+    "fecha": "2025-05-13",
+    "tiempoLectura": 5,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 4,
+    "titulo": "La nueva era de la computación cuántica acelerada en Europa",
+    "slug": "nueva-era-computacion-cuantica-europa",
+    "categoria": "Tecnología",
+    "descripcion": "Nuevos procesadores ópticos y algoritmos de tolerancia a fallos reducen la barrera térmica y aceleran la carrera cuántica del continente.",
+    "contenido": [
+      "Un consorcio de universidades europeas presentó una nueva generación de procesadores ópticos que reduce de forma significativa la tasa de errores por decoherencia, uno de los principales cuellos de botella de la computación cuántica aplicada.",
+      "El avance se apoya en algoritmos de corrección de errores más eficientes, capaces de operar con menos cúbits físicos por cúbit lógico, lo que abarata considerablemente el costo de construir procesadores de mayor escala.",
+      "Analistas del sector anticipan que Europa podría cerrar la brecha con Norteamérica y Asia en la carrera por el cómputo cuántico aplicado a farmacología y modelado climático hacia finales de la década."
+    ],
+    "imagen": "assets/images/noticia-04.jpg",
+    "autor": "Mateo Ramos",
+    "fecha": "2025-05-14",
+    "tiempoLectura": 4,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 5,
+    "titulo": "Aulas inmersivas y el impacto de los ecosistemas de aprendizaje digital",
+    "slug": "aulas-inmersivas-ecosistemas-aprendizaje-digital",
+    "categoria": "Educación",
+    "descripcion": "Las universidades del norte adaptan sus programas combinando pedagogía activa con plataformas de realidad aumentada y analítica del desempeño estudiantil.",
+    "contenido": [
+      "Un número creciente de universidades está rediseñando sus aulas para integrar plataformas de realidad aumentada, sensores de participación y analítica predictiva del desempeño académico en tiempo real.",
+      "El modelo, conocido como aprendizaje inmersivo híbrido, combina sesiones presenciales cortas con laboratorios virtuales que permiten a los estudiantes repetir experimentos complejos sin restricciones de tiempo ni de materiales.",
+      "Los primeros resultados muestran una mejora sostenida en la retención de conceptos abstractos, especialmente en carreras de ciencias e ingeniería, aunque persisten desafíos de equidad en el acceso a los dispositivos necesarios."
+    ],
+    "imagen": "assets/images/noticia-05.jpg",
+    "autor": "Sofía Morales",
+    "fecha": "2025-05-13",
+    "tiempoLectura": 6,
+    "destacada": true,
+    "estado": "publicada"
+  },
+  {
+    "id": 6,
+    "titulo": "La reforma de las competencias STEAM en la formación temprana",
+    "slug": "reforma-competencias-steam-formacion-temprana",
+    "categoria": "Educación",
+    "descripcion": "Expertos en psicopedagogía demuestran cómo el pensamiento computacional fomenta el razonamiento crítico desde los primeros años escolares.",
+    "contenido": [
+      "Un estudio longitudinal aplicado en colegios públicos y privados concluye que introducir nociones de pensamiento computacional desde los seis años mejora de forma medible la capacidad de resolución de problemas complejos en etapas posteriores.",
+      "El enfoque STEAM, que integra ciencia, tecnología, ingeniería, arte y matemáticas, se aleja de la enseñanza memorística para priorizar proyectos interdisciplinarios guiados por preguntas abiertas.",
+      "Los ministerios de educación de la región evalúan incorporar estas metodologías al currículo obligatorio, aunque advierten que su éxito depende directamente de la formación continua del cuerpo docente."
+    ],
+    "imagen": "assets/images/noticia-06.jpg",
+    "autor": "Clara Benítez",
+    "fecha": "2025-05-09",
+    "tiempoLectura": 4,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 7,
+    "titulo": "Aulas inteligentes y modelo de neuroeducación se expanden en colegios",
+    "slug": "aulas-inteligentes-neuroeducacion-colegios",
+    "categoria": "Educación",
+    "descripcion": "Colegios de la región adoptan modelos de neuroeducación apoyados en analítica de atención para personalizar el ritmo de aprendizaje de cada estudiante.",
+    "contenido": [
+      "Instituciones educativas de distintas ciudades comenzaron a implementar modelos de neuroeducación que combinan evidencia sobre el funcionamiento del cerebro con estrategias pedagógicas personalizadas.",
+      "El sistema utiliza registros anónimos de atención e interacción en plataformas educativas para ajustar automáticamente la dificultad de los ejercicios propuestos a cada estudiante.",
+      "Docentes capacitados en el modelo reportan mayor motivación en el aula, aunque el proceso de adopción exige acompañamiento constante durante el primer año de implementación."
+    ],
+    "imagen": "assets/images/noticia-07.jpg",
+    "autor": "Sofía Morales",
+    "fecha": "2025-05-15",
+    "tiempoLectura": 4,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 8,
+    "titulo": "Universidades adoptan aulas inteligentes y analítica predictiva para el aprendizaje",
+    "slug": "universidades-aulas-inteligentes-analitica-predictiva",
+    "categoria": "Educación",
+    "descripcion": "Un consorcio académico implementa plataformas de machine learning para monitorear el desempeño estudiantil en tiempo real con tutorías personalizadas.",
+    "contenido": [
+      "Un consorcio de universidades públicas puso en marcha una plataforma de aprendizaje automático capaz de anticipar el riesgo de deserción académica a partir de patrones de asistencia y desempeño en evaluaciones parciales.",
+      "El sistema genera alertas tempranas que activan tutorías personalizadas antes de que el rezago académico se vuelva difícil de revertir, priorizando a estudiantes de primer y segundo semestre.",
+      "Las autoridades académicas destacan que la herramienta complementa, pero no reemplaza, el acompañamiento humano de los programas de bienestar estudiantil."
+    ],
+    "imagen": "assets/images/noticia-08.jpg",
+    "autor": "Lucía Serrano",
+    "fecha": "2025-05-12",
+    "tiempoLectura": 4,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 9,
+    "titulo": "Turismo regenerativo en el Tayrona y Sierra Nevada: el modelo colombiano",
+    "slug": "turismo-regenerativo-tayrona-sierra-nevada",
+    "categoria": "Turismo",
+    "descripcion": "Ecolodges comunitarios con huella de carbono neutra y protección de ecosistemas demuestran cómo la riqueza biológica de Colombia lidera el turismo regenerativo.",
+    "contenido": [
+      "Un grupo de ecolodges comunitarios ubicados entre el Parque Nacional Natural Tayrona y la Sierra Nevada de Santa Marta se consolidó como referente regional de turismo regenerativo, un modelo que busca dejar los ecosistemas visitados en mejor estado del que se encontraron.",
+      "El esquema combina energía solar autónoma, tratamiento local de aguas residuales y alianzas directas con comunidades indígenas de la zona, que participan del diseño de los recorridos y reciben una parte significativa de los ingresos generados.",
+      "Organismos internacionales de turismo sostenible citan el caso como ejemplo de cómo la riqueza biológica puede convertirse en motor económico sin comprometer la conservación a largo plazo."
+    ],
+    "imagen": "assets/images/noticia-09.jpg",
+    "autor": "Diego Cortés",
+    "fecha": "2025-05-11",
+    "tiempoLectura": 5,
+    "destacada": true,
+    "estado": "publicada"
+  },
+  {
+    "id": 10,
+    "titulo": "Ecoturismo en el Parque Nacional Natural Tayrona: preservación y hospitalidad sostenible",
+    "slug": "ecoturismo-tayrona-preservacion-hospitalidad",
+    "categoria": "Turismo",
+    "descripcion": "Iniciativas de cero impacto ambiental y turismo regenerativo marcan la pauta en las reservas naturales del Caribe colombiano.",
+    "contenido": [
+      "El Parque Nacional Natural Tayrona limitó el aforo diario de visitantes como parte de una estrategia integral para equilibrar la afluencia turística con la capacidad de carga real de sus ecosistemas costeros.",
+      "Operadores locales certificados en buenas prácticas ambientales lideran ahora la mayoría de los recorridos, con protocolos estrictos sobre manejo de residuos y distancia mínima frente a la fauna silvestre.",
+      "El resultado, según guardaparques consultados, es una recuperación visible de la vegetación de playa y una reducción sostenida de los incidentes de contaminación reportados en temporada alta."
+    ],
+    "imagen": "assets/images/noticia-10.jpg",
+    "autor": "Martín Valdés",
+    "fecha": "2025-05-12",
+    "tiempoLectura": 5,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 11,
+    "titulo": "Nuevas reservas marinas comunitarias logran regenerar los arrecifes del Caribe",
+    "slug": "reservas-marinas-comunitarias-arrecifes-caribe",
+    "categoria": "Turismo",
+    "descripcion": "Comunidades costeras del Caribe reportan una recuperación medible de la cobertura coralina tras cinco años de manejo pesquero comunitario.",
+    "contenido": [
+      "Comunidades pesqueras del Caribe colombiano reportaron una recuperación medible en la cobertura coralina de sus arrecifes tras cinco años de manejo comunitario de las zonas de pesca.",
+      "El modelo, impulsado por organizaciones locales de conservación, establece períodos de veda rotativa y zonas de exclusión total que permiten a los arrecifes recuperarse entre ciclos de aprovechamiento controlado.",
+      "El turismo de buceo responsable se ha convertido en una fuente de ingresos complementaria que refuerza el incentivo económico para mantener el cuidado de estas reservas a largo plazo."
+    ],
+    "imagen": "assets/images/noticia-11.jpg",
+    "autor": "Elena Santoro",
+    "fecha": "2025-05-08",
+    "tiempoLectura": 5,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 12,
+    "titulo": "Patagonia: arquitectura de bajo impacto redefine el turismo austral",
+    "slug": "patagonia-arquitectura-bajo-impacto-turismo-austral",
+    "categoria": "Turismo",
+    "descripcion": "Refugios de montaña construidos con materiales locales y huella mínima transforman la experiencia de los visitantes en la Patagonia chilena y argentina.",
+    "contenido": [
+      "Una nueva generación de refugios de montaña en la Patagonia chilena y argentina prioriza materiales locales, cimentaciones desmontables y sistemas de energía autónoma para minimizar su huella sobre el territorio.",
+      "Los proyectos, diseñados junto a arquitectos especializados en construcción de bajo impacto, buscan integrarse visualmente al paisaje en lugar de imponerse sobre él.",
+      "El sector hotelero de la región reporta una demanda creciente de viajeros dispuestos a pagar tarifas superiores a cambio de experiencias con compromisos ambientales verificables."
+    ],
+    "imagen": "assets/images/noticia-12.jpg",
+    "autor": "Diego Cortés",
+    "fecha": "2025-05-07",
+    "tiempoLectura": 4,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 13,
+    "titulo": "La gobernanza ESG acelera las fusiones corporativas en Iberoamérica",
+    "slug": "gobernanza-esg-fusiones-corporativas-iberoamerica",
+    "categoria": "Negocios",
+    "descripcion": "Directivos apuestan por criterios de sustentabilidad medibles para obtener financiamiento preferente y consolidar posiciones de mercado.",
+    "contenido": [
+      "Las operaciones de fusiones y adquisiciones en Iberoamérica registraron un incremento sostenido durante el último trimestre, impulsadas en buena parte por compañías que buscan fortalecer sus indicadores ambientales, sociales y de gobernanza (ESG).",
+      "Los fondos de inversión institucionales condicionan cada vez con mayor frecuencia el acceso a financiamiento preferente al cumplimiento de metas de sustentabilidad verificables por auditores independientes.",
+      "Analistas del sector advierten que esta tendencia podría acentuar la brecha entre grandes corporaciones, con capacidad de invertir en certificaciones costosas, y pequeñas empresas que aún no logran adaptar sus procesos."
+    ],
+    "imagen": "assets/images/noticia-13.jpg",
+    "autor": "Valeria Paz",
+    "fecha": "2025-05-11",
+    "tiempoLectura": 3,
+    "destacada": true,
+    "estado": "publicada"
+  },
+  {
+    "id": 14,
+    "titulo": "Empresas con modelo cero emisiones incrementan su valor de mercado",
+    "slug": "empresas-cero-emisiones-valor-mercado",
+    "categoria": "Negocios",
+    "descripcion": "Los fondos globales priorizan compañías con auditorías ambientales rigurosas frente a la volatilidad energética de los mercados tradicionales.",
+    "contenido": [
+      "Un análisis de mercado reveló que las compañías con compromisos verificables de cero emisiones netas registraron una valorización superior al promedio de su sector durante el último año.",
+      "Los fondos de inversión globales explican esta preferencia por la menor exposición de estas empresas a la volatilidad regulatoria y energética que enfrentan los modelos productivos tradicionales.",
+      "Sin embargo, especialistas advierten sobre el riesgo de greenwashing corporativo y llaman a fortalecer los estándares de auditoría ambiental independiente."
+    ],
+    "imagen": "assets/images/noticia-14.jpg",
+    "autor": "Ana Gómez",
+    "fecha": "2025-05-10",
+    "tiempoLectura": 3,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 15,
+    "titulo": "Bolsas asiáticas registran récord de inversiones en semiconductores fotónicos",
+    "slug": "bolsas-asiaticas-record-semiconductores-fotonicos",
+    "categoria": "Negocios",
+    "descripcion": "El mercado financiero asiático concentra un flujo histórico de capital hacia la nueva generación de chips basados en fotónica integrada.",
+    "contenido": [
+      "Las principales bolsas asiáticas registraron esta semana un flujo histórico de inversión hacia fabricantes de semiconductores fotónicos, impulsado por la creciente demanda de chips capaces de procesar datos mediante luz en lugar de electricidad.",
+      "La tecnología promete reducir de forma significativa el consumo energético de los centros de datos que sostienen a la inteligencia artificial generativa, uno de los principales cuellos de botella de la industria.",
+      "Analistas financieros proyectan que la carrera por dominar esta tecnología podría redefinir el mapa de poder industrial en la próxima década."
+    ],
+    "imagen": "assets/images/noticia-15.jpg",
+    "autor": "Andrés Navarro",
+    "fecha": "2025-05-15",
+    "tiempoLectura": 3,
+    "destacada": false,
+    "estado": "publicada"
+  },
+  {
+    "id": 16,
+    "titulo": "Fondos de riesgo redefinen sus carteras hacia tecnologías de infraestructura climática",
+    "slug": "fondos-riesgo-carteras-infraestructura-climatica",
+    "categoria": "Negocios",
+    "descripcion": "La descarbonización industrial capta el 42% del capital de inversión institucional en el primer trimestre, según cifras del sector.",
+    "contenido": [
+      "Los fondos de capital de riesgo destinaron el 42% de su inversión institucional del primer trimestre a compañías dedicadas a infraestructura climática, superando por primera vez a los sectores tecnológicos tradicionales.",
+      "Entre los rubros más beneficiados se encuentran el almacenamiento energético a gran escala, la captura directa de carbono y las redes eléctricas inteligentes adaptadas a fuentes renovables intermitentes.",
+      "El reporte, todavía en revisión editorial interna, será ampliado en las próximas semanas con proyecciones sectoriales para el cierre del año."
+    ],
+    "imagen": "assets/images/noticia-16.jpg",
+    "autor": "Ana Gómez",
+    "fecha": "2025-05-06",
+    "tiempoLectura": 3,
+    "destacada": false,
+    "estado": "borrador"
+  }
+]

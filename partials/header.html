@@ -1,0 +1,28 @@
+<header class="cabecera">
+  <div class="contenedor cabecera__interior">
+    <a class="logo" href="index.html" aria-label="Newsly, ir al inicio">
+      <span class="logo__insignia">N</span>
+      <span class="logo__texto">Newsly</span>
+    </a>
+
+    <button type="button" class="cabecera__hamburguesa" id="botonMenuMovil" aria-expanded="false" aria-controls="navegacionPrincipal" aria-label="Abrir menú de navegación">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navegacion" id="navegacionPrincipal" aria-label="Navegación principal">
+      <a href="index.html" data-nav="inicio">Inicio</a>
+      <a href="noticias.html" data-nav="noticias">Noticias</a>
+      <a href="favoritos.html" data-nav="favoritos">Favoritos</a>
+      <a href="nosotros.html" data-nav="nosotros">Nosotros</a>
+      <a href="contacto.html" data-nav="contacto">Contacto</a>
+    </nav>
+
+    <form class="buscador-cabecera" id="buscadorCabecera" role="search">
+      <label class="sr-solo" for="buscadorCabeceraInput">Buscar noticias</label>
+      <input type="search" id="buscadorCabeceraInput" name="q" placeholder="Buscar noticias, temas...">
+      <button type="submit" aria-label="Buscar">🔍</button>
+    </form>
+
+    <a class="boton boton--fantasma cabecera__gestion" href="administracion.html" data-nav="administracion">⚙ Gestión</a>
+  </div>
+</header>
