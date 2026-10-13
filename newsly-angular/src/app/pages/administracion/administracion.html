@@ -7,7 +7,7 @@
       <h1>Gestión de noticias</h1>
       <p style="max-width:60ch; color:var(--color-text-muted)">Panel editorial de administración y publicación de artículos. Control local de contenidos, autorías y estados de publicación (los cambios se guardan en este navegador).</p>
     </div>
-    <a class="boton boton--primario" href="#panelCrear"><i class="bi bi-plus-circle"></i> Crear noticia</a>
+    <button type="button" class="boton boton--primario" (click)="irAFormulario()"><i class="bi bi-plus-circle"></i> Crear noticia</button>
   </div>
 
   <div class="mensaje-admin" *ngIf="mensaje() as m" [class.visible]="!!m" [class]="'mensaje-admin visible mensaje-admin--' + m.tipo">

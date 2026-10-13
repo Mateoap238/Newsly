@@ -71,6 +71,10 @@ export class Administracion implements OnInit {
     this.recargar();
   }
 
+  irAFormulario(): void {
+    document.getElementById('panelCrear')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   private recargar(): void {
     this.noticiasService.obtenerNoticias().subscribe((noticias) => {
       this.todas.set([...noticias].sort((a, b) => b.fecha.localeCompare(a.fecha)));
