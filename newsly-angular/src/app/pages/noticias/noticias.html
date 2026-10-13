@@ -1,0 +1,50 @@
+<main class="contenedor seccion">
+  <p class="eyebrow">Edición central · Archivo periodístico</p>
+  <div class="listado-cabecera">
+    <div>
+      <h1>Explora nuestras noticias</h1>
+      <p style="max-width:60ch; color:var(--color-text-muted)">Descubre análisis rigurosos, reportajes exclusivos y actualidad curados por nuestra redacción en Tecnología, Educación, Turismo y Negocios.</p>
+    </div>
+    <div class="listado-cabecera__stats">
+      <div><strong>{{ totalPublicadas() }}</strong><span>Publicaciones</span></div>
+      <div><strong>{{ CATEGORIAS.length }}</strong><span>Especialidades</span></div>
+    </div>
+  </div>
+
+  <div class="panel-filtros">
+    <div class="panel-filtros__busqueda">
+      <label class="sr-solo" for="filtroTexto">Buscar por palabras clave, tema o autor</label>
+      <input type="search" id="filtroTexto" placeholder="Buscar por palabras clave, tema o autor…" [(ngModel)]="texto" (ngModelChange)="actualizarTexto()">
+      <label class="sr-solo" for="filtroOrden">Ordenar por</label>
+      <select id="filtroOrden" [(ngModel)]="orden" (ngModelChange)="actualizarOrden()">
+        <option value="recientes">Más recientes</option>
+        <option value="antiguas">Más antiguas</option>
+        <option value="titulo">Título (A-Z)</option>
+      </select>
+    </div>
+    <div class="chips-categoria">
+      <div class="chips-categoria__lista" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="chip" [class.activo]="categoria === 'Todas'" (click)="seleccionarCategoria('Todas')">Todas {{ totalPublicadas() }}</button>
+        <button type="button" class="chip" *ngFor="let c of CATEGORIAS" [class.activo]="categoria === c" (click)="seleccionarCategoria(c)">{{ c }} {{ conteo()[c] ?? 0 }}</button>
+      </div>
+      <span class="resultados-info">Mostrando {{ visibles().length }} de {{ filtradas().length }} noticias</span>
+    </div>
+  </div>
+
+  <div class="rejilla-noticias" aria-live="polite" *ngIf="filtradas().length; else estadoVacio">
+    <app-tarjeta-noticia *ngFor="let n of visibles()" [noticia]="n" />
+  </div>
+
+  <ng-template #estadoVacio>
+    <div class="estado-mensaje">
+      <div class="estado-mensaje__icono"><i class="bi bi-newspaper"></i></div>
+      <h3>No encontramos noticias con esos filtros</h3>
+      <p>Prueba con otra palabra clave o restablece los filtros para ver todo el catálogo.</p>
+      <button type="button" class="boton boton--primario" (click)="restablecer()">Restablecer filtros</button>
+    </div>
+  </ng-template>
+
+  <button type="button" class="boton boton--fantasma boton-cargar-mas" *ngIf="visibles().length < filtradas().length" (click)="cargarMas()">
+    <i class="bi bi-plus-lg"></i> Cargar más noticias
+  </button>
+</main>

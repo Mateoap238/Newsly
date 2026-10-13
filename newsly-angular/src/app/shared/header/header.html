@@ -1,0 +1,28 @@
+<header class="cabecera">
+  <div class="contenedor cabecera__interior">
+    <a class="logo" routerLink="/inicio" aria-label="Newsly, ir al inicio">
+      <span class="logo__insignia">N</span>
+      <span class="logo__texto">Newsly</span>
+    </a>
+
+    <button type="button" class="cabecera__hamburguesa" (click)="toggleMenu()" [attr.aria-expanded]="menuAbierto()" aria-controls="navegacionPrincipal" aria-label="Abrir menú de navegación">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navegacion" id="navegacionPrincipal" [class.navegacion--abierta]="menuAbierto()" aria-label="Navegación principal">
+      <a routerLink="/inicio" routerLinkActive="activo" (click)="cerrarMenu()">Inicio</a>
+      <a routerLink="/noticias" routerLinkActive="activo" (click)="cerrarMenu()">Noticias</a>
+      <a routerLink="/favoritos" routerLinkActive="activo" (click)="cerrarMenu()">Favoritos</a>
+      <a routerLink="/nosotros" routerLinkActive="activo" (click)="cerrarMenu()">Nosotros</a>
+      <a routerLink="/contacto" routerLinkActive="activo" (click)="cerrarMenu()">Contacto</a>
+    </nav>
+
+    <form class="buscador-cabecera" role="search" (submit)="$event.preventDefault(); buscar()">
+      <label class="sr-solo" for="buscadorCabeceraInput">Buscar noticias</label>
+      <input type="search" id="buscadorCabeceraInput" name="q" placeholder="Buscar noticias, temas..." [(ngModel)]="texto" [ngModelOptions]="{standalone: true}">
+      <button type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+    </form>
+
+    <a class="boton boton--fantasma cabecera__gestion" routerLink="/administracion" routerLinkActive="activo"><i class="bi bi-sliders"></i> Gestión</a>
+  </div>
+</header>

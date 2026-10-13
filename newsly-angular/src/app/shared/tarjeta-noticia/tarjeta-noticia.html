@@ -1,0 +1,33 @@
+<article class="tarjeta-noticia">
+  <a class="tarjeta-noticia__imagen-link" [routerLink]="['/detalle', noticia().id]">
+    <div class="tarjeta-noticia__imagen">
+      <img [src]="noticia().imagen" [alt]="noticia().titulo" loading="lazy">
+      <span [class]="'badge badge--' + CLASE_CATEGORIA[noticia().categoria]">{{ noticia().categoria }}</span>
+    </div>
+  </a>
+  <button
+    type="button"
+    class="btn-favorito"
+    [class.es-favorito]="storage.esFavorito(noticia().id)"
+    [attr.aria-pressed]="storage.esFavorito(noticia().id)"
+    [attr.aria-label]="storage.esFavorito(noticia().id) ? 'Quitar de favoritos' : 'Guardar en favoritos'"
+    (click)="toggleFavorito($event)"
+  ><i class="bi bi-star-fill"></i></button>
+  <div class="tarjeta-noticia__cuerpo">
+    <p class="tarjeta-noticia__meta">
+      <span><i class="bi bi-calendar3"></i> {{ noticiasService.formatearFecha(noticia().fecha) }}</span>
+      <span><i class="bi bi-clock"></i> {{ noticia().tiempoLectura }} min de lectura</span>
+    </p>
+    <h3 class="tarjeta-noticia__titulo">
+      <a [routerLink]="['/detalle', noticia().id]">{{ noticia().titulo }}</a>
+    </h3>
+    <p class="tarjeta-noticia__resumen">{{ noticia().descripcion }}</p>
+    <div class="tarjeta-noticia__pie">
+      <span class="tarjeta-noticia__autor">
+        <span class="avatar-iniciales">{{ noticiasService.iniciales(noticia().autor) }}</span>
+        {{ noticia().autor }}
+      </span>
+      <a class="enlace-ver-mas" [routerLink]="['/detalle', noticia().id]">Ver más →</a>
+    </div>
+  </div>
+</article>

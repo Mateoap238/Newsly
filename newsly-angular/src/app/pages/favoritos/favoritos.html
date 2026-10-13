@@ -1,0 +1,59 @@
+<main class="contenedor seccion">
+  <nav class="migas"><a routerLink="/inicio">Inicio</a> / Favoritos</nav>
+
+  <div class="favoritos-cabecera">
+    <div>
+      <span class="eyebrow">Colección personal</span>
+      <h1>Mis favoritos</h1>
+      <p style="max-width:60ch; color:var(--color-text-muted)">
+        Artículos guardados para leer con tranquilidad. Tienes <strong>{{ favoritas().length }}</strong> {{ favoritas().length === 1 ? 'noticia' : 'noticias' }} en tu lista de lectura personal.
+      </p>
+    </div>
+    <div class="favoritos-cabecera__acciones" *ngIf="favoritas().length">
+      <button type="button" class="boton boton--peligro" (click)="limpiarLista()"><i class="bi bi-trash3"></i> Limpiar lista</button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="favoritas().length; else estadoVacio">
+    <div class="chips-categoria" style="margin: var(--space-5) 0">
+      <div class="chips-categoria__lista">
+        <button type="button" class="chip" [class.activo]="categoriaActiva === 'Todas'" (click)="seleccionarCategoria('Todas')">Todas {{ favoritas().length }}</button>
+        <button type="button" class="chip" *ngFor="let c of categoriasConFavoritos()" [class.activo]="categoriaActiva === c" (click)="seleccionarCategoria(c)">{{ c }} {{ conteo()[c] }}</button>
+      </div>
+      <span class="favoritos-tiempo"><i class="bi bi-clock-history"></i> Tiempo estimado total: {{ minutosTotales() }} min</span>
+    </div>
+
+    <div class="rejilla-noticias" aria-live="polite">
+      <article class="tarjeta-noticia" *ngFor="let n of visibles()">
+        <a class="tarjeta-noticia__imagen-link" [routerLink]="['/detalle', n.id]">
+          <div class="tarjeta-noticia__imagen">
+            <img [src]="n.imagen" [alt]="n.titulo" loading="lazy">
+            <span [class]="'badge badge--' + CLASE_CATEGORIA[n.categoria]">{{ n.categoria }}</span>
+          </div>
+        </a>
+        <button type="button" class="btn-favorito es-favorito" [attr.aria-label]="'Quitar de favoritos'"><i class="bi bi-star-fill"></i></button>
+        <div class="tarjeta-noticia__cuerpo">
+          <p class="tarjeta-noticia__meta">
+            <span><i class="bi bi-calendar3"></i> {{ formatearFecha(n.fecha) }}</span>
+            <span><i class="bi bi-clock"></i> {{ n.tiempoLectura }} min de lectura</span>
+          </p>
+          <h3 class="tarjeta-noticia__titulo"><a [routerLink]="['/detalle', n.id]">{{ n.titulo }}</a></h3>
+          <p class="tarjeta-noticia__resumen">{{ n.descripcion }}</p>
+          <div class="tarjeta-noticia__pie">
+            <a class="boton boton--primario" [routerLink]="['/detalle', n.id]">Ver noticia <i class="bi bi-arrow-right"></i></a>
+            <button type="button" class="enlace-ver-mas" style="background:none;border:none" (click)="eliminar(n.id)"><i class="bi bi-bookmark-x"></i> Eliminar</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </ng-container>
+
+  <ng-template #estadoVacio>
+    <div class="estado-mensaje">
+      <div class="estado-mensaje__icono"><i class="bi bi-bookmark-heart"></i></div>
+      <h3>Todavía no tienes noticias guardadas</h3>
+      <p>Explora nuestras publicaciones y haz clic en el ícono de favorito para conservar lecturas pendientes y revisarlas cuando quieras.</p>
+      <a class="boton boton--primario" routerLink="/noticias"><i class="bi bi-compass"></i> Explorar noticias</a>
+    </div>
+  </ng-template>
+</main>

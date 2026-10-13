@@ -1,0 +1,58 @@
+<footer class="pie">
+  <div class="contenedor pie__cuadricula">
+    <div class="pie__marca">
+      <a class="logo" routerLink="/inicio" aria-label="Newsly, ir al inicio">
+        <span class="logo__insignia">N</span>
+        <span class="logo__texto">Newsly</span>
+      </a>
+      <p>Periodismo digital contemporáneo, veraz e independiente. Rigor editorial con el ritmo del presente.</p>
+      <div class="pie__redes" aria-label="Redes de Newsly">
+        <span title="Sitio web"><i class="bi bi-globe2"></i></span>
+        <span title="Podcast"><i class="bi bi-mic"></i></span>
+        <span title="RSS"><i class="bi bi-rss"></i></span>
+        <span title="Correo"><i class="bi bi-envelope"></i></span>
+      </div>
+    </div>
+
+    <nav class="pie__columna" aria-label="Categorías">
+      <h3>Categorías</h3>
+      <ul>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria: 'Tecnología'}">Tecnología</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria: 'Educación'}">Educación</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria: 'Turismo'}">Turismo</a></li>
+        <li><a [routerLink]="['/noticias']" [queryParams]="{categoria: 'Negocios'}">Negocios</a></li>
+      </ul>
+    </nav>
+
+    <nav class="pie__columna" aria-label="Navegación">
+      <h3>Navegación</h3>
+      <ul>
+        <li><a routerLink="/inicio">Inicio</a></li>
+        <li><a routerLink="/noticias">Noticias</a></li>
+        <li><a routerLink="/favoritos">Favoritos</a></li>
+        <li><a routerLink="/nosotros">Nosotros</a></li>
+        <li><a routerLink="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="pie__columna pie__newsletter">
+      <h3>Newsletter semanal</h3>
+      <p>Recibe los análisis y exclusivas más relevantes directamente en tu bandeja.</p>
+      <form class="formulario-newsletter" novalidate (submit)="$event.preventDefault(); suscribir()">
+        <label class="sr-solo" for="pieNewsletterEmail">Correo electrónico</label>
+        <input type="email" id="pieNewsletterEmail" name="email" placeholder="tu@correo.com" required [(ngModel)]="correo" [ngModelOptions]="{standalone: true}">
+        <button type="submit" class="boton boton--primario">Unirme</button>
+        <p class="formulario-newsletter__mensaje" [class.formulario-newsletter__mensaje--error]="esError" role="status" aria-live="polite">{{ mensaje }}</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="contenedor pie__legal">
+    <p>© 2025 Newsly. Todos los derechos reservados.</p>
+    <p class="pie__legal-enlaces">
+      <span>Política de Privacidad</span>
+      <span>Términos y Condiciones</span>
+      <span>Aviso Legal</span>
+    </p>
+  </div>
+</footer>

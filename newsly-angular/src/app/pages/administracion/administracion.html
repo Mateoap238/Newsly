@@ -1,0 +1,150 @@
+<main class="contenedor seccion">
+  <nav class="migas"><a routerLink="/inicio">Inicio</a> / Gestión</nav>
+
+  <div class="admin-cabecera">
+    <div>
+      <span class="eyebrow">Newsly CMS · Panel local</span>
+      <h1>Gestión de noticias</h1>
+      <p style="max-width:60ch; color:var(--color-text-muted)">Panel editorial de administración y publicación de artículos. Control local de contenidos, autorías y estados de publicación (los cambios se guardan en este navegador).</p>
+    </div>
+    <a class="boton boton--primario" href="#panelCrear"><i class="bi bi-plus-circle"></i> Crear noticia</a>
+  </div>
+
+  <div class="mensaje-admin" *ngIf="mensaje() as m" [class.visible]="!!m" [class]="'mensaje-admin visible mensaje-admin--' + m.tipo">
+    <i class="bi" [class.bi-check-circle-fill]="m.tipo === 'exito'" [class.bi-exclamation-circle-fill]="m.tipo === 'error'"></i>
+    {{ m.texto }}
+  </div>
+
+  <div class="admin-stats">
+    <div class="admin-stat"><span>Total gestionadas</span><strong>{{ total() }}</strong></div>
+    <div class="admin-stat"><span>Publicadas en vivo</span><strong>{{ publicadas() }}</strong></div>
+    <div class="admin-stat"><span>Borradores / revisión</span><strong>{{ borradores() }}</strong></div>
+    <div class="admin-stat"><span>Velocidad de lectura</span><strong>{{ velocidadLectura() }} min</strong></div>
+  </div>
+
+  <div class="panel-filtros">
+    <div class="panel-filtros__busqueda">
+      <label class="sr-solo" for="adminBusqueda">Buscar noticias</label>
+      <input type="search" id="adminBusqueda" placeholder="Buscar noticias por título, autor o palabra clave…" [(ngModel)]="busqueda" (ngModelChange)="actualizarBusqueda()">
+      <label class="sr-solo" for="adminCategoria">Categoría</label>
+      <select id="adminCategoria" [(ngModel)]="categoriaFiltro" (ngModelChange)="actualizarCategoriaFiltro()">
+        <option value="Todas">Categoría: Todas</option>
+        <option *ngFor="let c of CATEGORIAS" [value]="c">{{ c }}</option>
+      </select>
+      <label class="sr-solo" for="adminEstado">Estado</label>
+      <select id="adminEstado" [(ngModel)]="estadoFiltro" (ngModelChange)="actualizarEstadoFiltro()">
+        <option value="Todos">Estado: Todos</option>
+        <option value="publicada">Publicada</option>
+        <option value="borrador">Borrador</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="admin-tabla-envoltorio">
+    <table class="admin-tabla">
+      <thead>
+        <tr>
+          <th>Miniatura</th>
+          <th>Título y resumen</th>
+          <th>Categoría</th>
+          <th>Autor</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let n of filtradas()">
+          <td><img class="admin-tabla__miniatura" [src]="n.imagen" alt=""></td>
+          <td>
+            <span class="admin-tabla__titulo">{{ n.titulo }}</span>
+            <p class="admin-tabla__resumen">{{ n.descripcion.slice(0, 70) }}{{ n.descripcion.length > 70 ? '…' : '' }}</p>
+          </td>
+          <td><span [class]="'badge badge--' + CLASE_CATEGORIA[n.categoria]">{{ n.categoria }}</span></td>
+          <td>{{ n.autor }}</td>
+          <td>{{ n.fecha }}</td>
+          <td><span [class]="'estado-pill estado-pill--' + n.estado"><i class="bi bi-circle-fill"></i> {{ n.estado === 'publicada' ? 'Publicado' : 'Borrador' }}</span></td>
+          <td class="admin-tabla__acciones">
+            <button type="button" class="icono-boton icono-boton--peligro" (click)="abrirModalEliminar(n.id)" aria-label="Eliminar noticia"><i class="bi bi-trash3"></i></button>
+          </td>
+        </tr>
+        <tr *ngIf="!filtradas().length">
+          <td colspan="7" style="text-align:center; padding:2rem; color:var(--color-text-muted)">No hay noticias que coincidan con la búsqueda o los filtros.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="resultados-info">Mostrando {{ filtradas().length }} de {{ total() }} noticias administradas</p>
+
+  <section class="admin-panel-crear" id="panelCrear">
+    <h2 style="font-size:var(--fs-lg)">Crear nueva noticia</h2>
+    <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Los campos con asterisco (*) son obligatorios. La noticia quedará guardada en este navegador.</p>
+
+    <form [formGroup]="formulario" novalidate>
+      <div class="admin-panel-crear__grid">
+        <div class="campo" [class.con-error]="invalido('titulo')">
+          <label for="adminTitulo">Título de la noticia *</label>
+          <input type="text" id="adminTitulo" formControlName="titulo" maxlength="90" placeholder="Máximo 90 caracteres">
+          <p class="campo-error">El título debe tener entre 10 y 90 caracteres.</p>
+        </div>
+        <div class="campo" [class.con-error]="invalido('categoria')">
+          <label for="adminNuevaCategoria">Categoría *</label>
+          <select id="adminNuevaCategoria" formControlName="categoria">
+            <option value="">Selecciona una categoría…</option>
+            <option *ngFor="let c of CATEGORIAS" [value]="c">{{ c }}</option>
+          </select>
+          <p class="campo-error">Selecciona una categoría.</p>
+        </div>
+      </div>
+
+      <div class="campo" [class.con-error]="invalido('descripcion')">
+        <label for="adminDescripcion">Descripción breve *</label>
+        <textarea id="adminDescripcion" formControlName="descripcion" maxlength="220" style="min-height:80px" placeholder="Resumen que aparecerá en las tarjetas de noticia"></textarea>
+        <p class="campo-error">La descripción debe tener entre 20 y 220 caracteres.</p>
+      </div>
+
+      <div class="campo" [class.con-error]="invalido('contenido')">
+        <label for="adminContenido">Contenido completo *</label>
+        <textarea id="adminContenido" formControlName="contenido" style="min-height:160px" placeholder="Escribe cada párrafo en una línea distinta"></textarea>
+        <p class="campo-error">Escribe al menos un párrafo con contenido real (mínimo 40 caracteres).</p>
+      </div>
+
+      <div class="admin-panel-crear__grid">
+        <div class="campo" [class.con-error]="invalido('autor')">
+          <label for="adminAutor">Autor asignado *</label>
+          <input type="text" id="adminAutor" formControlName="autor" placeholder="Nombre del periodista responsable">
+          <p class="campo-error">Ingresa el nombre del autor.</p>
+        </div>
+        <div class="campo">
+          <label for="adminImagen">URL de imagen (opcional)</label>
+          <input type="text" id="adminImagen" formControlName="imagen" placeholder="assets/images/noticia-01.jpg">
+        </div>
+      </div>
+
+      <div class="admin-panel-crear__acciones">
+        <button type="button" class="boton boton--fantasma" (click)="guardar('borrador')">Guardar como borrador</button>
+        <button type="button" class="boton boton--primario" (click)="guardar('publicada')"><i class="bi bi-rocket-takeoff"></i> Publicar noticia</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<div class="modal-fondo" [class.visible]="idPendienteEliminar() !== null" (click)="$event.target === $event.currentTarget && cerrarModal()">
+  <div class="modal" role="dialog" aria-modal="true" *ngIf="noticiaPendiente() as n">
+    <div class="modal__icono"><i class="bi bi-exclamation-triangle-fill"></i></div>
+    <h2 style="font-size:var(--fs-md)">¿Estás seguro de eliminar esta noticia?</h2>
+    <p style="color:var(--color-text-muted); font-size:var(--fs-sm)">Esta acción retirará el artículo del portal público y no podrá deshacerse desde este navegador.</p>
+    <div class="modal__vista-previa">
+      <img [src]="n.imagen" alt="">
+      <div>
+        <strong style="display:block; font-size:var(--fs-sm)">{{ n.titulo }}</strong>
+        <span style="font-size:var(--fs-xs); color:var(--color-text-muted)">{{ n.estado === 'publicada' ? 'Publicada' : 'Borrador' }} · {{ n.autor }}</span>
+      </div>
+    </div>
+    <div class="modal__acciones">
+      <button type="button" class="boton boton--fantasma" (click)="cerrarModal()">Cancelar</button>
+      <button type="button" class="boton boton--peligro" (click)="confirmarEliminacion()"><i class="bi bi-trash3"></i> Sí, eliminar noticia</button>
+    </div>
+  </div>
+</div>

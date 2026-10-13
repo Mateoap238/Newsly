@@ -1,0 +1,145 @@
+<main>
+  <div class="franja-ultima-hora">
+    <div class="contenedor">
+      <span class="franja-ultima-hora__etiqueta">Última hora</span>
+      <span>{{ hero()?.titulo ?? 'Cargando la noticia principal…' }}</span>
+      <span>Bogotá (COT)</span>
+    </div>
+  </div>
+
+  <section class="contenedor">
+    <div class="hero-principal" aria-live="polite" *ngIf="hero() as h; else cargandoHero">
+      <figure class="hero-principal__imagen">
+        <img [src]="h.imagen" [alt]="h.titulo">
+        <figcaption>
+          <span>{{ h.categoria }}</span>
+          <span>Actualizado · {{ formatearFecha(h.fecha) }}</span>
+        </figcaption>
+      </figure>
+      <div class="hero-principal__contenido">
+        <span class="eyebrow">{{ h.categoria }} · Tendencia N°1</span>
+        <h1>{{ h.titulo }}</h1>
+        <p>{{ h.descripcion }}</p>
+        <div class="hero-principal__meta">
+          <span class="avatar-iniciales">{{ iniciales(h.autor) }}</span>
+          <span>Por {{ h.autor }} · {{ h.tiempoLectura }} min de lectura</span>
+        </div>
+        <div class="hero-principal__acciones">
+          <a class="boton boton--primario" [routerLink]="['/detalle', h.id]">Leer noticia completa</a>
+          <button type="button" class="boton boton--fantasma btn-favorito-grande" (click)="toggleFavoritoHero()" [attr.aria-pressed]="storage.esFavorito(h.id)">
+            <i class="bi" [class.bi-star-fill]="storage.esFavorito(h.id)" [class.bi-star]="!storage.esFavorito(h.id)"></i>
+            <span>{{ storage.esFavorito(h.id) ? 'Guardado en favoritos' : 'Guardar en favoritos' }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <ng-template #cargandoHero>
+      <div class="estado-mensaje" *ngIf="!cargando()"><p>Todavía no hay noticias publicadas.</p></div>
+    </ng-template>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion__encabezado">
+      <div>
+        <span class="eyebrow">Exploración temática</span>
+        <h2>Categorías destacadas</h2>
+      </div>
+      <p style="max-width:34ch; color:var(--color-text-muted)">Sigue el pulso periodístico clasificado por áreas estratégicas y líneas editoriales continuas.</p>
+    </div>
+    <div class="categorias-grid">
+      <a class="categoria-tarjeta" *ngFor="let categoria of CATEGORIAS" [routerLink]="['/noticias']" [queryParams]="{categoria: categoria}">
+        <span class="categoria-tarjeta__conteo">{{ conteoCategorias()[categoria] ?? 0 }} artículos</span>
+        <span class="categoria-tarjeta__icono"><i class="bi" [class]="ICONO_CATEGORIA[categoria]"></i></span>
+        <h3>{{ categoria }}</h3>
+        <p>{{ DESCRIPCION_CATEGORIA[categoria] }}</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion__encabezado">
+      <div>
+        <span class="eyebrow">Noticias destacadas</span>
+        <h2>Selección curada por el consejo editorial</h2>
+      </div>
+      <a class="enlace-ver-mas" routerLink="/noticias">Ver todas las destacadas →</a>
+    </div>
+    <div class="destacadas-grid" *ngIf="otrasDestacadas().length; else sinDestacadas">
+      <app-tarjeta-noticia *ngFor="let n of otrasDestacadas()" [noticia]="n" />
+    </div>
+    <ng-template #sinDestacadas>
+      <div class="estado-mensaje"><p>No hay más noticias destacadas por ahora.</p></div>
+    </ng-template>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion__encabezado">
+      <div>
+        <span class="eyebrow">Ritmo del presente</span>
+        <h2>Últimas noticias</h2>
+      </div>
+      <a class="enlace-ver-mas" routerLink="/noticias">Explorar todas las noticias →</a>
+    </div>
+    <div class="ultimas-noticias">
+      <div class="noticia-principal-lista" *ngIf="principal() as p; else sinPrincipal">
+        <span class="eyebrow">{{ p.categoria }} · Publicado {{ formatearFecha(p.fecha) }}</span>
+        <h3>{{ p.titulo }}</h3>
+        <p>{{ p.descripcion }}</p>
+        <a class="enlace-ver-mas" [routerLink]="['/detalle', p.id]">Leer análisis completo →</a>
+      </div>
+      <ng-template #sinPrincipal><p>No hay noticias recientes.</p></ng-template>
+
+      <div class="lista-breve" *ngIf="resto().length; else sinResto">
+        <a class="lista-breve__item" *ngFor="let n of resto()" [routerLink]="['/detalle', n.id]">
+          <span class="lista-breve__hora">{{ formatearFecha(n.fecha) }}</span>
+          <span>
+            <span class="lista-breve__categoria">{{ n.categoria }}</span>
+            <p class="lista-breve__titulo">{{ n.titulo }}</p>
+          </span>
+        </a>
+      </div>
+      <ng-template #sinResto><p>No hay más noticias por mostrar.</p></ng-template>
+    </div>
+  </section>
+
+  <section class="contenedor">
+    <div class="franja-compromiso">
+      <div>
+        <span class="eyebrow">Nuestro compromiso ético</span>
+        <h2>Periodismo riguroso, independiente y pensado para lectores exigentes.</h2>
+        <p>En un entorno saturado de inmediatez superficial, Newsly defiende el análisis reposado, la verificación documental exhaustiva y la transparencia sin concesiones comerciales.</p>
+        <div class="franja-compromiso__stats">
+          <div><strong>100%</strong><span>Financiación libre e independiente</span></div>
+          <div><strong>24+</strong><span>Corresponsales internacionales</span></div>
+          <div><strong>0</strong><span>Cosas sin contrastar</span></div>
+        </div>
+      </div>
+      <div class="franja-compromiso__acciones">
+        <a class="boton boton--primario" routerLink="/nosotros">Conocer a nuestra redacción</a>
+        <a class="boton boton--fantasma" routerLink="/nosotros" fragment="estandar">Leer estatuto de redacción</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="cta-doble">
+      <div class="cta-tarjeta">
+        <span class="eyebrow"><i class="bi bi-envelope-paper"></i> Despacho editorial matutino</span>
+        <h3>Comienza tu jornada con claridad informativa</h3>
+        <p>A las 07:00 AM enviamos a tu bandeja una síntesis analítica de cinco minutos con lo verdaderamente crucial del día.</p>
+        <form class="formulario-newsletter" novalidate (submit)="$event.preventDefault(); suscribir()">
+          <label class="sr-solo" for="homeNewsletterEmail">Correo electrónico</label>
+          <input type="email" id="homeNewsletterEmail" name="email" placeholder="Ingresa tu correo electrónico…" required [(ngModel)]="correoNewsletter" [ngModelOptions]="{standalone: true}">
+          <button type="submit" class="boton boton--primario">Suscribirme gratis</button>
+          <p class="formulario-newsletter__mensaje" role="status" aria-live="polite">{{ mensajeNewsletter }}</p>
+        </form>
+      </div>
+      <div class="cta-tarjeta">
+        <span class="eyebrow"><i class="bi bi-broadcast-pin"></i> Canal de fuentes seguras</span>
+        <h3>¿Tienes una primicia o sugerencia editorial? Escríbenos</h3>
+        <p>Garantizamos estricta confidencialidad bajo secreto profesional y protocolos de comunicación encriptada de extremo a extremo.</p>
+        <a class="boton boton--fantasma" routerLink="/contacto">Contactar a la mesa de investigación →</a>
+      </div>
+    </div>
+  </section>
+</main>
